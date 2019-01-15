@@ -31,10 +31,13 @@ window.app = {
 		return JSON.parse(userInfoStr);
 	},
 	
+	/**
+	 * 退出登录
+	 */
 	userLogout: function() {
 		plus.storage.removeItem("userInfo");
 	},
-		/**
+	/**
 	 * 封装消息提示框，默认mui的不支持居中和自定义icon，所以使用h5+
 	 * @param {Object} msg
 	 * @param {Object} type
@@ -43,6 +46,7 @@ window.app = {
 		plus.nativeUI.toast(msg, 
 			{icon: "image/" + type + ".png", verticalAlign: "center"})
 	}
+	
 	
 	
 	
