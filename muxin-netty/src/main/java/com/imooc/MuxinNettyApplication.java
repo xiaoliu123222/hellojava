@@ -2,7 +2,7 @@ package com.imooc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-// import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 import tk.mybatis.spring.annotation.MapperScan;
@@ -14,10 +14,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 @ComponentScan(basePackages= {"com.imooc", "org.n3r.idworker"})
 public class MuxinNettyApplication {
 
-/*	@Bean
+	@Bean
 	public SpringUtil getSpingUtil() {
 		return new SpringUtil();
-	}*/
+	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MuxinNettyApplication.class, args);
