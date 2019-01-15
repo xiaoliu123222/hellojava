@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.imooc.pojo.Users;
+import com.imooc.pojo.bo.UsersBO;
 import com.imooc.service.UserService;
 import com.imooc.utils.IMoocJSONResult;
 import com.imooc.utils.MD5Utils;
@@ -49,6 +50,18 @@ public class UserController {
 		}
 
 		return IMoocJSONResult.ok(userResult);
+	}
+	
+	@PostMapping("/setNickname")
+	public IMoocJSONResult setNickname(@RequestBody UsersBO userBO) throws Exception {
+		Users user = new Users();
+		user.setId(userBO.getUserId());
+		user.setNickname(userBO.getNickname());
+		
+		Users result = userService.updateUserInfo(user);
+		
+		return IMoocJSONResult.ok(result);
+		
 	}
 
 }
