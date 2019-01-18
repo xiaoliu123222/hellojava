@@ -1,5 +1,24 @@
 ###FastDFS文件服务器  
 
+使用：
+service fdfs_trackerd start
+netstat -unltp|grep fdfs
+service fdfs_storaged start
+netstat -unltp|grep fdfs
+cd /vagrant
+/usr/bin/fdfs_upload_file /etc/fdfs/client.conf aabb.jpg
+
+imooc/M00/00/00/CgACD1w9gNuARB5RAAFijsVsAIU970.jpg
+
+在nginx配置了
+http://192.168.33.1:88
+所以
+http://192.168.33.1:88/imooc/M00/00/00/CgACD1w9gNuARB5RAAFijsVsAIU970.jpg
+可访问到
+
+
+
+
 参考：
 https://www.cnblogs.com/chiangchou/p/fastdfs.html
 
@@ -142,7 +161,7 @@ http.server_port=80
 # vim /etc/sysconfig/iptables
 
 添加如下端口行：
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22122 -j ACCEPT
+iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 22122 -j ACCEPT
 
 重启防火墙：
 # service iptables restart
