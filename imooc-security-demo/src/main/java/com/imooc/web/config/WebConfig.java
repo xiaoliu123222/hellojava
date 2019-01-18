@@ -40,7 +40,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		registrationBean.setFilter(timeFilter);
 		
 		List<String> urls = new ArrayList<>();
-		urls.add("/*");
+		urls.add("/*");		//在满足路径的时候才会起作用；这里定义所有路径起作用
 		registrationBean.setUrlPatterns(urls);
 		
 		return registrationBean;

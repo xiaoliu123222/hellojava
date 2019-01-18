@@ -17,6 +17,7 @@ import javax.servlet.ServletResponse;
  * @author zhailiang
  *
  */
+//如果使用Component的话，就不用再webconfig里面配置，会直接起作用
 //@Component
 public class TimeFilter implements Filter {
 

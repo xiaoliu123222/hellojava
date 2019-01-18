@@ -65,9 +65,26 @@ exception 异常处理/自定义异常处理
 restful api的拦截
 
 过滤器 filter
-拦截器 interceptor
-切片 aspect
+拦截器 interceptor    com.imooc.web.interceptor
+切片 aspect 可以拿到方法调用的参数值  com.imooc.web.aspect
 
+3个拦截机制各有特点，根据业务选择
+最先起作用 filter
+然后 interceptor
+然后aspect（最先捕获异常）
+最后再进到调用的controller方法
+
+
+com.imooc.web.config.WebConfig  引入第三方或自定义filter
+
+
+切片（类）
+切入点（注解）
+1.在哪些方法上起作用  
+2.在什么时候起作用  
+
+增强（方法）  
+起作用时执行的业务逻辑  
 
 
 

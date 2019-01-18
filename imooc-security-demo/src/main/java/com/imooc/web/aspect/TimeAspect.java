@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeAspect {
 	
+	//在哪里起作用:excution
 	@Around("execution(* com.imooc.web.controller.UserController.*(..))")
 	public Object handleControllerMethod(ProceedingJoinPoint pjp) throws Throwable {
 		
